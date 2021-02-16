@@ -3,6 +3,7 @@
 build
 compile_commands.json
 .cache
+.clang-format
 
 *~
 *.autosave
