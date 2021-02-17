@@ -9,13 +9,34 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
+enable_testing(true)
 
-add_executable(game_of_life
-  main.cpp
+find_package(Qt5 COMPONENTS Core Test REQUIRED)
+
+set(EXE game_of_life)
+add_executable(${EXE})
+
+target_sources(${EXE}
+    PRIVATE main.cpp
+    PRIVATE input_parser.cpp
+    PRIVATE game.cpp
+    PRIVATE field.cpp
 )
-target_link_libraries(game_of_life Qt${QT_VERSION_MAJOR}::Core)
+
+target_link_libraries(${EXE} Qt5::Core)
+
+set(TESTS tests)
+add_executable(${TESTS})
+target_sources(${TESTS}
+    PRIVATE tests.cpp
+    PRIVATE input_parser.cpp
+    PRIVATE field.cpp
+)
+add_test(NAME ${TESTS} COMMAND tests)
+
+target_link_libraries(${TESTS}
+    PRIVATE Qt5::Test
+)
