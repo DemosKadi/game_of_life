@@ -3,13 +3,15 @@ Game of Life
 **Game of Life** is a cellular automaton, see [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 ## Dependencies
-``` cmake 3.14
+```
+cmake 3.14
 Qt 5.10
 gcc 7 or clang 4
 ```
 
 ## Installation
-```$ git clone https://github.com/DemosKadi/game_of_life.git
+```
+$ git clone https://github.com/DemosKadi/game_of_life.git
 $ cd game_of_life
 $ mkdir build && cd build
 $ cmake ..
@@ -17,7 +19,8 @@ $ cmake --build .
 ```
 
 ## Usage
-```Usage: ./game_of_life [options] input
+```
+Usage: ./game_of_life [options] input
 A simple game of life simulator
 
 Options:
