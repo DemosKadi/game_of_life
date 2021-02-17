@@ -9,7 +9,7 @@
 auto main(int argc, char *argv[]) -> int {
     QCoreApplication a(argc, argv);
     QCoreApplication::setApplicationName("Game of life");
-    QCoreApplication::setApplicationVersion("0.1");
+    QCoreApplication::setApplicationVersion("1.0");
 
     QCommandLineParser parser;
     parser.setApplicationDescription("A simple game of life simulator");
